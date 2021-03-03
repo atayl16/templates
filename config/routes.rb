@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  get 'chase/index'
+  resources :merchants
+  get 'merchants/:id/laptop', to: "merchants#laptop"
+  get 'merchants/:id/salon', to: "merchants#salon"
   root 'welcome#index'
 end

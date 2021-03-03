@@ -1,0 +1,44 @@
+<p></p>
+<p id="notice"><%= notice %></p>
+<div class="container">
+
+<p>
+  <strong>Name:</strong>
+  <%= @merchant.name %>
+</p>
+
+<p>
+  <strong>Booking widget:</strong>
+  <%= @merchant.booking_widget.html_safe %>
+</p>
+
+<p>
+  <strong>Waitlist widget:</strong>
+  <%= @merchant.waitlist_widget.html_safe %>
+</p>
+
+<p>
+  <strong>Class widget:</strong>
+  <%= @merchant.class_widget.html_safe %>
+</p>
+<!--
+<p>
+  <strong>Logo:</strong>
+  <%= @merchant.logo %>
+</p> -->
+
+<p>
+  <strong>MID:</strong>
+  <%= @merchant.mid %>
+</p>
+<!-- 
+
+<p>
+  <strong>Image url:</strong>
+  <%= @merchant.image_url %>
+</p> -->
+
+<%= link_to 'Edit', edit_merchant_path(@merchant), class: "btn btn-outline-primary" %> |
+<%= link_to 'Back', merchants_path, class: "btn btn-outline-primary" %>
+</div>
+<p></p>

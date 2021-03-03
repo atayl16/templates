@@ -1,0 +1,27 @@
+<div class="container">
+  <%= bootstrap_form_for(@merchant) do |form| %>
+    <% if merchant.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(merchant.errors.count, "error") %> prohibited this merchant from being saved:</h2>
+
+        <ul>
+          <% merchant.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+      <%= form.text_field :name %>
+      <%= form.text_area :booking_widget %>
+      <%= form.text_area :waitlist_widget %>
+      <%= form.text_area :class_widget %>
+      <%# <%= form.text_area :logo %> %>
+      <%= form.number_field :mid %>
+      <%# <%= form.text_area :image_url %> %>
+
+    <div class="actions">
+      <%= form.submit %>
+      <p></p>
+    </div>
+  <% end %>
+</div>

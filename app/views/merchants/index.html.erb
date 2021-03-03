@@ -1,0 +1,41 @@
+<p></p>
+<p id="notice"><%= notice %></p>
+<div class="container">
+
+<h1>Merchants</h1>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Logo</th>
+      <th>Name</th>
+      <th>Mid</th>
+      <th>Booking widget</th>
+      <th>Waitlist widget</th>
+      <th>Class widget</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @merchants.each do |merchant| %>
+      <tr>
+        <td><%= merchant.logo %></td>
+        <td><%= merchant.name %></td>
+        <td><%= merchant.mid %></td>
+        <td><%= merchant.booking_widget.html_safe %></td>
+        <td><%= merchant.waitlist_widget.html_safe %></td>
+        <td><%= merchant.class_widget.html_safe %></td>
+        <td><%= link_to 'View', merchant, class: "btn btn-outline-success " %></td>
+        <td><%= link_to 'Edit', edit_merchant_path(merchant), class: "btn btn-outline-warning" %></td>
+        <td><%= link_to 'Delete', merchant, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add New Merchant', new_merchant_path, class: "btn btn-outline-primary"  %>
+</div>
+<p></p>

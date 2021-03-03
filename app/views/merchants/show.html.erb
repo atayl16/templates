@@ -2,23 +2,31 @@
 <p id="notice"><%= notice %></p>
 <div class="container">
 
-<p>
-  <strong>Name:</strong>
+<h2>
   <%= @merchant.name %>
-</p>
+</h2>
 
+<h5>
+  <strong>Links</strong>
+  <br>
+</h5>
+  <%= link_to "Salon", {:controller => "merchants", :action => "salon"}%>
+  <br>
+  <%= link_to "Laptop", {:controller => "merchants", :action => "laptop"}%>
+
+<p></p>
 <p>
-  <strong>Booking widget:</strong>
+  <strong>Booking Widget Button</strong>
   <%= @merchant.booking_widget.html_safe %>
 </p>
 
 <p>
-  <strong>Waitlist widget:</strong>
+  <strong>Waitlist Widget Button</strong>
   <%= @merchant.waitlist_widget.html_safe %>
 </p>
 
 <p>
-  <strong>Class widget:</strong>
+  <strong>Class Widget Button</strong>
   <%= @merchant.class_widget.html_safe %>
 </p>
 <!--
@@ -31,14 +39,14 @@
   <strong>MID:</strong>
   <%= @merchant.mid %>
 </p>
-<!-- 
+<!--
 
 <p>
   <strong>Image url:</strong>
   <%= @merchant.image_url %>
 </p> -->
 
-<%= link_to 'Edit', edit_merchant_path(@merchant), class: "btn btn-outline-primary" %> |
+<%= link_to 'Edit', edit_merchant_path(@merchant), class: "btn btn-outline-primary" %>
 <%= link_to 'Back', merchants_path, class: "btn btn-outline-primary" %>
 </div>
 <p></p>

@@ -11,14 +11,14 @@
         </ul>
       </div>
     <% end %>
-      <%= form.text_field :name %>
+      <%= form.text_field :name, label:  "Merchant Name"  %>
       <%= form.select :vertical, [["Salon", "salon"], ["Business", "business"], ["Barbershop", "barbershop"], ["Spa", "spa"], ["Pet", "pet"]] %>
-      <%= form.text_field :sentence %>
-      <%= form.text_area :booking_widget %>
-      <%= form.text_area :waitlist_widget %>
-      <%= form.text_area :class_widget %>
+      <%= form.text_field :sentence, label:  "Marketing Sentence - Optional"  %>
+      <%= form.text_area :booking_widget, label:  "Booking Widget HTML Code"  %>
+      <%= form.text_area :waitlist_widget, label:  "Walk-in Waitlist Widget HTML Code"  %>
+      <%= form.text_area :class_widget, label:  "Classes/Events Widget HTML Code"  %>
       <%= form.text_area :logo, label:  "Logo Link" %>
-      <%= form.number_field :mid %>
+      <%= form.number_field :mid, label:  "MID - Optional"  %>
       <%# <%= form.text_area :image_url %>
 
     <div class="actions">

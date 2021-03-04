@@ -9,9 +9,6 @@
 <h5>
   <strong>Links</strong>
   <br>
-</h5>
-
-<h5>
   <%= link_to "Go to #{@merchant.vertical.titleize} Home", {:controller => "merchants", :action => "#{@merchant.vertical}"}%>
   <br>
   <%= link_to "Class Page", {:controller => "merchants", :action => "classes"}%>
@@ -41,11 +38,6 @@
   <%= @merchant.sentence %>
 </p>
 <!--
-<p>
-  <strong>Logo:</strong>
-  <%= @merchant.logo %>
-</p> -->
-
 <p>
   <strong>MID:</strong>
   <%= @merchant.mid %>

@@ -10,9 +10,13 @@
   <strong>Links</strong>
   <br>
 </h5>
-  <%= link_to "Salon", {:controller => "merchants", :action => "salon"}%>
+  <%= link_to "#{@merchant.vertical.titleize} Home", {:controller => "merchants", :action => "#{@merchant.vertical}"}%>
   <br>
-  <%= link_to "Laptop", {:controller => "merchants", :action => "laptop"}%>
+  <%= link_to "Classes", {:controller => "merchants", :action => "classes"}%>
+  <br>
+  <%= link_to "Events", {:controller => "merchants", :action => "events"}%>
+  <br>
+  <%= link_to "Check-In", {:controller => "merchants", :action => "waitlist"}%>
 
 <p></p>
 <p>
@@ -28,6 +32,11 @@
 <p>
   <strong>Class Widget Button</strong>
   <%= @merchant.class_widget.html_safe %>
+</p>
+
+<p>
+  <strong>Marketing Sentence</strong>
+  <%= @merchant.sentence %>
 </p>
 <!--
 <p>

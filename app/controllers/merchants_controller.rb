@@ -57,12 +57,12 @@ class MerchantsController < ApplicationController
     end
   end
 
-  def laptop
-    @merchant = Merchant.friendly.find(params[:id])
-  end
+  verticals = %w[ salon business classes events waitlist pet spa barbershop ]
 
-  def salon
-    @merchant = Merchant.friendly.friendly.find(params[:id])
+  verticals.each do |vertical|
+    define_method(vertical) do
+      @merchant = Merchant.friendly.friendly.find(params[:id])
+    end
   end
 
   private
@@ -73,6 +73,6 @@ class MerchantsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def merchant_params
-      params.require(:merchant).permit(:name, :booking_widget, :waitlist_widget, :class_widget, :logo, :mid, :slug, :image_url)
+      params.require(:merchant).permit(:name, :booking_widget, :waitlist_widget, :class_widget, :logo, :mid, :slug, :image_url, :sentence, :vertical)
     end
 end

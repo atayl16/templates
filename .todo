@@ -5,3 +5,4 @@ active storage logo
 
 
 nav bars
+l, [["Salon", "salon"], ["Business", "business"], ["Barbershop", "barbershop"], ["Spa", "spa"], ["Pet", "pet"]]

@@ -11,15 +11,15 @@
   <br>
 </h5>
 
-
-  <%= link_to "#{@merchant.vertical.titleize} Home", {:controller => "merchants", :action => "#{@merchant.vertical}"}%>
+<h5>
+  <%= link_to "Go to #{@merchant.vertical.titleize} Home", {:controller => "merchants", :action => "#{@merchant.vertical}"}%>
   <br>
-  <%= link_to "Classes", {:controller => "merchants", :action => "classes"}%>
+  <%= link_to "Class Page", {:controller => "merchants", :action => "classes"}%>
   <br>
-  <%= link_to "Events", {:controller => "merchants", :action => "events"}%>
+  <%= link_to "Events Page", {:controller => "merchants", :action => "events"}%>
   <br>
-  <%= link_to "Check-In", {:controller => "merchants", :action => "waitlist"}%>
-
+  <%= link_to "Check-In Page", {:controller => "merchants", :action => "waitlist"}%>
+</h5>
 <p></p>
 <p>
   <strong>Booking Widget Button</strong>
@@ -57,7 +57,7 @@
   <%= @merchant.image_url %>
 </p> -->
 
-<%= link_to 'Edit', edit_merchant_path(@merchant), class: "btn btn-outline-primary" %>
-<%= link_to 'Back', merchants_path, class: "btn btn-outline-primary" %>
+<%= link_to 'Edit Merchant Profile', edit_merchant_path(@merchant), class: "btn btn-outline-primary" %>
+<%= link_to 'Back to Merchant List', merchants_path, class: "btn btn-outline-primary" %>
 </div>
 <p></p>

@@ -3,13 +3,15 @@
 <div class="container">
 
 <h2>
-  <%= @merchant.name %>
+ <img src="<%= @merchant.logo.html_safe %>" class="w3-image w3-round" style="width:5%;margin:auto;">  <%= @merchant.name %>
 </h2>
 
 <h5>
   <strong>Links</strong>
   <br>
 </h5>
+
+
   <%= link_to "#{@merchant.vertical.titleize} Home", {:controller => "merchants", :action => "#{@merchant.vertical}"}%>
   <br>
   <%= link_to "Classes", {:controller => "merchants", :action => "classes"}%>

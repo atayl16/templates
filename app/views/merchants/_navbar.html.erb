@@ -1,10 +1,11 @@
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
-  <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <%= link_to "#{@merchant.name}", {:controller => "merchants", :action => "#{@merchant.vertical}"}, class: "w3-bar-item w3-button"%>
+  <div class="w3-bar w3-white w3-card" id="myNavbar"style="padding-left:30px;">
+    <a href="/merchants/<%= @merchant.slug %>/<%= @merchant.vertical %>"></a><img src="<%= @merchant.logo.html_safe %>" style="width:3%">
 
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
+      <%= link_to "#{@merchant.name}", {:controller => "merchants", :action => "#{@merchant.vertical}"}, class: "w3-bar-item w3-button"%>
       <a href="/merchants/<%= @merchant.slug %>/classes" class="w3-bar-item w3-button">Classes</a>
       <a href="/merchants/<%= @merchant.slug %>/events" class="w3-bar-item w3-button"> Events</a>
       <a href="/merchants/<%= @merchant.slug %>/waitlist" class="w3-bar-item w3-button"> Check-In</a>

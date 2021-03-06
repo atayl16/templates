@@ -18,36 +18,38 @@
   <%= link_to "Check-In Page", {:controller => "merchants", :action => "waitlist"}%>
 </h5>
 <p></p>
-<p>
-  <strong>Booking Widget Button</strong>
-  <%= @merchant.booking_widget.html_safe %>
-</p>
+<div class="col-6">
+<table class="table table-bordered table-sm ">
+  <thead>
+    <tr>
+      <th><strong>Booking Widget</strong></th>
+      <th><strong>Wiatlist Widget</strong></th>
+      <th><strong>Class Widget</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><%= @merchant.booking_widget.html_safe %></td>
+        <td><%= @merchant.waitlist_widget.html_safe %></td>
+        <td><%= @merchant.class_widget.html_safe %></td>
+  </tbody>
+</table>
+</div>
 
 <p>
-  <strong>Waitlist Widget Button</strong>
-  <%= @merchant.waitlist_widget.html_safe %>
-</p>
-
-<p>
-  <strong>Class Widget Button</strong>
-  <%= @merchant.class_widget.html_safe %>
-</p>
-
-<p>
-  <strong>Marketing Sentence</strong>
+  <strong><h6>Marketing Sentence</h6></strong>
   <%= @merchant.sentence %>
 </p>
-<!--
-<p>
-  <strong>MID:</strong>
-  <%= @merchant.mid %>
-</p>
-<!--
 
 <p>
-  <strong>Image url:</strong>
-  <%= @merchant.image_url %>
-</p> -->
+  <strong><h6>MID:</h6></strong>
+  <%= @merchant.mid %>
+</p>
+
+<p>
+  <strong><h6>Custom Page Background Image Preview:</h6></strong>
+  <img src="<%= @merchant.image_url %>" height="125" >
+</p>
 
 <%= link_to 'Edit Merchant Profile', edit_merchant_path(@merchant), class: "btn btn-outline-primary" %>
 <%= link_to 'Back to Merchant List', merchants_path, class: "btn btn-outline-primary" %>

@@ -22,7 +22,7 @@
       <tr>
         <td><h6><%= merchant.name %></h6></td>
         <td><h6><%= merchant.mid %></h6></td>
-        <td><a href="/merchants/<%= merchant.slug %>/<%= merchant.vertical %>" class="btn btn-outline-primary"><%= merchant.vertical.titleize %> Home</a></td>
+        <td><a href="/merchants/<%= merchant.slug %>/<%= merchant.vertical %>" class="btn btn-outline-info"><%= merchant.vertical.titleize %></a></td>
         <td><h5>
           <% if merchant.booking_widget? %>
           <span class="badge rounded-pill bg-success">Yes</span>

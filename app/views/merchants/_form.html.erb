@@ -11,15 +11,15 @@
         </ul>
       </div>
     <% end %>
-      <%= form.text_field :name, label:  "Merchant Name"  %>
-      <%= form.select :vertical, [["Salon", "salon"], ["Business", "business"], ["Barbershop", "barbershop"], ["Spa", "spa"], ["Pet", "pet"], ["Custom", "custom"]] %>
-      <%= form.text_field :sentence, label:  "Marketing Sentence - Optional"  %>
-      <%= form.text_area :booking_widget, label:  "Booking Widget HTML Code"  %>
-      <%= form.text_area :waitlist_widget, label:  "Walk-in Waitlist Widget HTML Code"  %>
-      <%= form.text_area :class_widget, label:  "Classes/Events Widget HTML Code"  %>
-      <%= form.text_area :logo, label:  "Logo Link" %>
-      <%= form.number_field :mid, label:  "MID - Optional"  %>
-      <%= form.text_area :image_url, label:  "Link to Image for Custom Template - Optional" %>
+      <%= form.text_field :name, label:  "Merchant Name*", required: true, placeholder: "Joe Smith Hair"  %>
+      <%= form.select :vertical, [["Salon", "salon"], ["Business", "business"], ["Barbershop", "barbershop"], ["Spa", "spa"], ["Pet", "pet"], ["Custom - Make sure you add the custom image url at the bottom", "custom"]] %>
+      <%= form.text_field :sentence, label:  "Marketing Sentence - Optional", placeholder: "Greatest shop in the city!"  %>
+      <%= form.text_area :booking_widget, label:  "Booking Widget HTML Code", placeholder: "<div id='mytime-widget-wrapper-1614790512501...."  %>
+      <%= form.text_area :waitlist_widget, label:  "Walk-in Waitlist Widget HTML Code", placeholder: "<div id='mytime-widget-wrapper-1614790512501...."   %>
+      <%= form.text_area :class_widget, label:  "Classes/Events Widget HTML Code", placeholder: "<div id='mytime-widget-wrapper-1614790512501...."   %>
+      <%= form.text_area :logo, label:  "Logo Link", placeholder: "https://previews.123rf.com/images/marysan9/marysan91810/marysan9181000080/110399871-round-robot-icon-line-style-on-white-background.jpg" %>
+      <%= form.number_field :mid, label:  "MID - Optional", placeholder: "123456"  %>
+      <%= form.text_area :image_url, label:  "Link to Image for Custom Template - Optional", placeholder: "https://cdn.pixabay.com/photo/2017/06/20/22/14/men-2425121_960_720.jpg" %>
 
     <div class="actions">
       <button type="submit" class="btn btn-primary">Save Merchant Profile</button>

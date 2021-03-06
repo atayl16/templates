@@ -6,9 +6,15 @@
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
       <%= link_to "#{@merchant.name}", {:controller => "merchants", :action => "#{@merchant.vertical}"}, class: "w3-bar-item w3-button"%>
+      <% if @merchant.class_widget? %>
       <a href="/merchants/<%= @merchant.slug %>/classes" class="w3-bar-item w3-button">Classes</a>
       <a href="/merchants/<%= @merchant.slug %>/events" class="w3-bar-item w3-button"> Events</a>
+      <% end %>
+      <% if @merchant.waitlist_widget?  %>
       <a href="/merchants/<%= @merchant.slug %>/waitlist" class="w3-bar-item w3-button"> Check-In</a>
+      <% else %>
+      <%= link_to "Home", {:controller => "merchants", :action => "#{@merchant.vertical}"}, class: "w3-bar-item w3-button"%>
+      <% end %>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 

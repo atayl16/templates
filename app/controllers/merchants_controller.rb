@@ -12,7 +12,7 @@ class MerchantsController < ApplicationController
   def new
     @merchant = Merchant.new
   end
-  
+
   def edit
   end
 
@@ -50,7 +50,7 @@ class MerchantsController < ApplicationController
     end
   end
 
-  verticals = %w[ salon business classes events waitlist pet spa barbershop ]
+  verticals = %w[ salon business classes events waitlist pet spa barbershop custom ]
 
   verticals.each do |vertical|
     define_method(vertical) do

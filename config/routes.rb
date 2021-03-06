@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   get 'merchants/:id/classes', to: "merchants#classes"
   get 'merchants/:id/events', to: "merchants#events"
   get 'merchants/:id/waitlist', to: "merchants#waitlist"
+  get 'merchants/:id/custom', to: "merchants#custom"
   root 'welcome#index'
 end

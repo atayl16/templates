@@ -1,0 +1,25 @@
+src="https://www.w3schools.com/<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <%= render "navbar" %>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px; max-height:750px;" id="home">
+  <img class="w3-image" src="<%= @merchant.image_url.html_safe %>"  width="1500" height="500" >
+  <div class="w3-display-middle w3-container w3-small">
+    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b><%= @merchant.name %></span></h1>
+    <%= @merchant.booking_widget.html_safe %>
+  </div>
+</header>
+
+
+</body>
+</html>

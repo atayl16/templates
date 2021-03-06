@@ -13,13 +13,19 @@ src="https://www.w3schools.com/<!DOCTYPE html>
 
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1500px; max-height:750px;" id="home">
-  <img class="w3-image" src="<%= @merchant.image_url.html_safe %>"  width="1500" height="500" >
+  <% if @merchant.image_url? %>
+    <img class="w3-image" src="<%= @merchant.image_url.html_safe %>"  width="1500" height="500" >
+  <% else %>
+    <img class="w3-image" src="https://cdn.pixabay.com/photo/2015/12/03/08/50/paper-1074131_960_720.jpg"  width=100% >
+  <% end %>
   <div class="w3-display-middle w3-container w3-small">
     <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b><%= @merchant.name %></span></h1>
     <%= @merchant.booking_widget.html_safe %>
   </div>
 </header>
 
-
+<div class="w3-display-bottomleft w3-padding-large">
+  <a  style="padding-left:50px;" href="/merchants/<%= @merchant.slug %>"><<</a>
+</div>
 </body>
 </html>

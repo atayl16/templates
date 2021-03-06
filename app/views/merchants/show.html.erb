@@ -1,57 +1,102 @@
-<p></p>
-<p id="notice"><%= notice %></p>
+<% if @merchant.image_url? %>
+  <div style="background-image: url(<%= @merchant.image_url %>); background-repeat: no-repeat; background-size: cover; height: 750px;">
+<% else %>
+  <div style="background-image: url(https://cdn.pixabay.com/photo/2016/12/14/03/42/volcano-1905556_960_720.jpg); background-repeat: no-repeat; background-size: cover; background-position: center; height: 750px;">
+<% end %>
 <div class="container">
+  <p id="notice"><%= notice %></p>
+  	<div class="row">
+		<div class="col-md-12">
+      <p></p>
+			<div>
+        <%= link_to 'Back to Merchant List', merchants_path, class: "btn btn-primary" %>
+			</div>
+      <p></p>
+			<div class="jumbotron">
+        <h2>
+         <img src="<%= @merchant.logo.html_safe %>" class="w3-image w3-round" style="width:5%;margin:auto;">  <%= @merchant.name %>
+        </h2>
+        <h4>
+          <%= @merchant.sentence %>
+        </h4>
+        <h6>
+          MID: <%= @merchant.mid %>
+        </h6>
+        <%= link_to 'Edit Merchant Profile', edit_merchant_path(@merchant), class: "btn btn-primary" %>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+          <div class="card">
+						<h5 class="card-header">
+							Links
+						</h5>
+						<div class="card-body">
+							<p class="card-text">
+                <%= link_to "Go to #{@merchant.vertical.titleize} Home", {:controller => "merchants", :action => "#{@merchant.vertical}"}%>
+                <br>
+                <%= link_to "Class Page", {:controller => "merchants", :action => "classes"}%>
+                <br>
+                <%= link_to "Events Page", {:controller => "merchants", :action => "events"}%>
+                <br>
+                <%= link_to "Check-In Page", {:controller => "merchants", :action => "waitlist"}%>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5">
+          <div class="card">
+						<h5 class="card-header">
+							Widgets
+						</h5>
+						<div class="card-body">
+              <table class="table table-bordered table-sm table-hover">
+                <tbody>
+                    <tr>
+                      <tr>
+                        <td>Booking Widget</td>
+                        <td><%= @merchant.booking_widget.html_safe %></td>
+                      </tr>
+                      <tr>
+                        <td>Waitlist Widget</td>
+                        <td><%= @merchant.waitlist_widget.html_safe %></td>
+                      </tr>
 
-<h2>
- <img src="<%= @merchant.logo.html_safe %>" class="w3-image w3-round" style="width:5%;margin:auto;">  <%= @merchant.name %>
-</h2>
-
-<h5>
-  <strong>Links</strong>
-  <br>
-  <%= link_to "Go to #{@merchant.vertical.titleize} Home", {:controller => "merchants", :action => "#{@merchant.vertical}"}%>
-  <br>
-  <%= link_to "Class Page", {:controller => "merchants", :action => "classes"}%>
-  <br>
-  <%= link_to "Events Page", {:controller => "merchants", :action => "events"}%>
-  <br>
-  <%= link_to "Check-In Page", {:controller => "merchants", :action => "waitlist"}%>
-</h5>
-<p></p>
-<div class="col-6">
-<table class="table table-bordered table-sm ">
-  <thead>
-    <tr>
-      <th><strong>Booking Widget</strong></th>
-      <th><strong>Wiatlist Widget</strong></th>
-      <th><strong>Class Widget</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><%= @merchant.booking_widget.html_safe %></td>
-        <td><%= @merchant.waitlist_widget.html_safe %></td>
-        <td><%= @merchant.class_widget.html_safe %></td>
-  </tbody>
-</table>
+                      <tr>
+                        <td>Class/Event Widget</td>
+                        <td><%= @merchant.class_widget.html_safe %></td>
+                      </tr>
+                </tbody>
+              </table>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+          <div class="card">
+						<h5 class="card-header">
+							Explore Other Verticals
+						</h5>
+						<div class="card-body">
+							<p class="card-text">
+                <a href="/merchants/<%= @merchant.slug %>/custom"> Custom</a>
+                <br>
+                <a href="/merchants/<%= @merchant.slug %>/spa"> Spa</a>
+                <br>
+                <a href="/merchants/<%= @merchant.slug %>/salon"> Salon</a>
+                <br>
+                <a href="/merchants/<%= @merchant.slug %>/barbershop"> Barbershop</a>
+                <br>
+                <a href="/merchants/<%= @merchant.slug %>/business"> Business</a>
+                <br>
+                <a href="/merchants/<%= @merchant.slug %>/pet"> Pet</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+      <p></p>
+      <p></p>
+      <p></p>
+		</div>
+	</div>
 </div>
-
-<p>
-  <strong><h6>Marketing Sentence</h6></strong>
-  <%= @merchant.sentence %>
-</p>
-
-<p>
-  <strong><h6>MID:</h6></strong>
-  <%= @merchant.mid %>
-</p>
-
-<p>
-  <strong><h6>Custom Page Background Image Preview:</h6></strong>
-  <img src="<%= @merchant.image_url %>" height="125" >
-</p>
-
-<%= link_to 'Edit Merchant Profile', edit_merchant_path(@merchant), class: "btn btn-outline-primary" %>
-<%= link_to 'Back to Merchant List', merchants_path, class: "btn btn-outline-primary" %>
 </div>
-<p></p>

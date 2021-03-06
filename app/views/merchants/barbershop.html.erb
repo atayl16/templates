@@ -20,6 +20,8 @@ src="https://www.w3schools.com/<!DOCTYPE html>
     <%= @merchant.booking_widget.html_safe %>
   </div>
 </header>
-
+<div class="w3-display-bottomleft w3-padding-large">
+  <a  style="padding-left:50px;" href="/merchants/<%= @merchant.slug %>"><<</a>
+</div>
 </body>
 </html>

@@ -1,10 +1,16 @@
-  <div style="background-image: url(https://cdn.pixabay.com/photo/2018/04/26/10/54/mountain-3351653_960_720.jpg); background-repeat: no-repeat; background-size: cover; background-position: center; height: 750px;">
-<p></p>
-<p id="notice"><%= notice %></p>
+<div style="background-image: url(https://cdn.pixabay.com/photo/2018/04/26/10/54/mountain-3351653_960_720.jpg); background-repeat: no-repeat; background-size: cover; background-position: center; height: 750px;">
+<%= render "navbar_internal" %>
 <div class="container">
+
 
 <h1>Merchants</h1>
 
+<p class="form-inline pull-right">
+    <%= form_tag url_for(:controller => 'merchants', :action => 'index'), :method => 'get' do %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", name: nil %>
+  <% end %>
+</p>
 <table class="table table-light table-striped table-hover">
   <thead>
     <tr>

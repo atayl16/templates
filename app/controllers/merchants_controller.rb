@@ -2,7 +2,11 @@ class MerchantsController < ApplicationController
   before_action :set_merchant, only: %i[ show edit update destroy ]
 
   def index
-    @merchants = Merchant.all
+    if params[:search]
+      @merchants = Merchant.where('name ILIKE ? OR mid ILIKE ?', "%#{params[:search]}%", "%#{params[:search]}%")
+    else
+      @merchants = Merchant.all
+    end
   end
 
   def show
@@ -64,6 +68,6 @@ class MerchantsController < ApplicationController
     end
 
     def merchant_params
-      params.require(:merchant).permit(:name, :booking_widget, :waitlist_widget, :class_widget, :logo, :mid, :slug, :image_url, :sentence, :vertical)
+      params.require(:merchant).permit(:name, :booking_widget, :waitlist_widget, :class_widget, :logo, :mid, :slug, :image_url, :sentence, :vertical, :search)
     end
 end

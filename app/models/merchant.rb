@@ -7,5 +7,4 @@ class Merchant < ApplicationRecord
       write_attribute(:slug, value)
     end
   end
-
 end

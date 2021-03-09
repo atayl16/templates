@@ -1,7 +1,7 @@
 <% if @merchant.image_url? %>
-  <div style="background-image: url(<%= @merchant.image_url %>); background-repeat: no-repeat; background-size: cover; height: 750px;">
+  <div style="background-image: url(<%= @merchant.image_url %>); background-repeat: no-repeat; background-size: cover; height: 900px;">
 <% else %>
-  <div style="background-image: url(https://cdn.pixabay.com/photo/2016/12/14/03/42/volcano-1905556_960_720.jpg); background-repeat: no-repeat; background-size: cover; background-position: center; height: 750px;">
+  <div style="background-image: url(https://cdn.pixabay.com/photo/2016/12/14/03/42/volcano-1905556_960_720.jpg); background-repeat: no-repeat; background-size: cover; background-position: center; height: 900px;">
 <% end %>
 <%= render "navbar_internal" %>
 <div class="container">
@@ -22,6 +22,11 @@
         <h6>
           MID: <%= @merchant.mid %>
         </h6>
+        <h7>
+          About Us: <%= @merchant.about %>
+        </h7>
+        <br>
+        <p></p>
         <%= link_to 'Edit Merchant Profile', edit_merchant_path(@merchant), class: "btn btn-primary" %>
 			</div>
 			<div class="row">

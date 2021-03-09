@@ -68,6 +68,6 @@ class MerchantsController < ApplicationController
     end
 
     def merchant_params
-      params.require(:merchant).permit(:name, :booking_widget, :waitlist_widget, :class_widget, :logo, :mid, :slug, :image_url, :sentence, :vertical, :search)
+      params.require(:merchant).permit(:name, :booking_widget, :waitlist_widget, :class_widget, :logo, :mid, :slug, :image_url, :sentence, :vertical, :search, :about)
     end
 end

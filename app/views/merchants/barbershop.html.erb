@@ -1,6 +1,6 @@
 src="https://www.w3schools.com/<!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>Barbershop</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -15,24 +15,7 @@ src="https://www.w3schools.com/<!DOCTYPE html>
 <header class="w3-display-container w3-content w3-wide" style="max-width:1500px; max-height:750px;" id="home">
   <img class="w3-image" src="https://cdn.pixabay.com/photo/2019/09/17/18/52/barbershop-4484297_960_720.jpg"  width="1500" height="500" >
   <div class="w3-display-middle w3-container">
-    <div class="jumbotron" id="jumbo">
-      <div class="inner">
-        <h2>
-         <img src="<%= @merchant.logo.html_safe %>" class="w3-image w3-round" style="width:5%;margin:auto;">  <%= @merchant.name %>
-        </h2>
-        <h4>
-          <%= @merchant.sentence %>
-        </h4>
-        <% if @merchant.about? %>
-          <h7>
-            <%= @merchant.about %>
-          </h7>
-        <% end %>
-        <br>
-        <p></p>
-        <%= @merchant.booking_widget.html_safe %>
-      </div>
-  </div>
+      <%= render "landing" %>
 </header>
 </body>
 </html>

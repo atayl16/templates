@@ -1,0 +1,21 @@
+<div class="jumbotron" id="jumbo">
+  <div class="inner">
+    <h2>
+     <img src="<%= @merchant.logo.html_safe %>" class="w3-image w3-round" style="width:5%;margin:auto;">  <%= @merchant.name %>
+    </h2>
+    <h4>
+      <%= @merchant.sentence %>
+    </h4>
+    <hr>
+    <%= @merchant.booking_widget.html_safe %>
+  </div>
+</div>
+<div class="jumbotron" id="jumbo">
+<div class="inner">
+  <% if @merchant.about? %>
+  <h7>
+    <%= @merchant.about %>
+  </h7>
+  <% end %>
+  </div>
+</div>

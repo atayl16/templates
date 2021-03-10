@@ -14,10 +14,24 @@ src="https://www.w3schools.com/<!DOCTYPE html>
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1500px; max-height:750px;" id="home">
   <img class="w3-image" src="https://cdn.pixabay.com/photo/2019/09/17/18/52/barbershop-4484297_960_720.jpg"  width="1500" height="500" >
-  <div class="w3-display-middle w3-container w3-small">
-    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b><%= @merchant.name %></span></h1>
-      <br>
-    <%= @merchant.booking_widget.html_safe %>
+  <div class="w3-display-middle w3-container">
+    <div class="jumbotron" id="jumbo">
+      <div class="inner">
+        <h2>
+         <img src="<%= @merchant.logo.html_safe %>" class="w3-image w3-round" style="width:5%;margin:auto;">  <%= @merchant.name %>
+        </h2>
+        <h4>
+          <%= @merchant.sentence %>
+        </h4>
+        <% if @merchant.about? %>
+          <h7>
+            <%= @merchant.about %>
+          </h7>
+        <% end %>
+        <br>
+        <p></p>
+        <%= @merchant.booking_widget.html_safe %>
+      </div>
   </div>
 </header>
 </body>

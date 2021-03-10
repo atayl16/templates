@@ -10,7 +10,6 @@ p {text-align: center;}
 body,h1 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
 .bgimg {
-  background-image: url('https://www.w3schools.com/w3images/forestbridge.jpg');
   min-height: 100%;
   background-position: center;
   background-size: cover;
@@ -18,12 +17,19 @@ body, html {height: 100%}
 </style>
 <body>
   <%= render "navbar" %>
-<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+<div class= "w3-display-container w3-animate-opacity  w3-text-white w3-content w3-wide" style="max-width:1500px; max-height:750px;" >
+  <% if @merchant.vertical == "pet" %>
+  <img class="w3-image" src="https://cdn.pixabay.com/photo/2017/04/04/21/12/dog-2203178_960_720.jpg" width= 100% height= 100% >
+  <% else %>
+  <img class="w3-image" src="https://cdn.pixabay.com/photo/2017/08/07/21/56/people-2608316_960_720.jpg"  width= 100% height= 100%>
+  <% end %>
   <div class="w3-display-topleft w3-padding-large w3-xlarge">
     <%= @merchant.name %>
   </div>
   <div class="w3-display-middle">
     <h1 class="w3-jumbo w3-animate-top">  <%= @merchant.name %> Events</h1>
+    <h4 class="w3-large w3-animate-top">Limited availability. Register now to reserve your spot!</h4>
+    <p></p>
     <%= @merchant.class_widget.html_safe %>
   </div>
 </div>

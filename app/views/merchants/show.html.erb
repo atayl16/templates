@@ -12,22 +12,26 @@
         <%= link_to 'Back to Merchant List', merchants_path, class: "btn btn-primary" %>
 			</div>
       <p></p>
-			<div class="jumbotron">
-        <h2>
-         <img src="<%= @merchant.logo.html_safe %>" class="w3-image w3-round" style="width:5%;margin:auto;">  <%= @merchant.name %>
-        </h2>
-        <h4>
-          <%= @merchant.sentence %>
-        </h4>
-        <h6>
-          MID: <%= @merchant.mid %>
-        </h6>
-        <h7>
-          About Us: <%= @merchant.about %>
-        </h7>
-        <br>
-        <p></p>
-        <%= link_to 'Edit Merchant Profile', edit_merchant_path(@merchant), class: "btn btn-primary" %>
+      <div class="jumbotron" id="jumbo">
+        <div class="inner">
+          <h2>
+           <img src="<%= @merchant.logo.html_safe %>" class="w3-image w3-round" style="width:5%;margin:auto;">  <%= @merchant.name %>
+          </h2>
+          <h4>
+            <%= @merchant.sentence %>
+          </h4>
+          <h6>
+            MID: <%= @merchant.mid %>
+          </h6>
+          <% if @merchant.about? %>
+            <h7>
+              About Us: <%= @merchant.about %>
+            </h7>
+          <% end %>
+          <br>
+          <p></p>
+          <%= link_to 'Edit Merchant Profile', edit_merchant_path(@merchant), class: "btn btn-primary" %>
+        </div>
 			</div>
 			<div class="row">
 				<div class="col-md-4">

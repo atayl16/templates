@@ -19,8 +19,23 @@ src="https://www.w3schools.com/<!DOCTYPE html>
     <img class="w3-image" src="https://cdn.pixabay.com/photo/2015/12/03/08/50/paper-1074131_960_720.jpg"  width=100% >
   <% end %>
   <div class="w3-display-middle w3-container w3-small">
-    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b><%= @merchant.name %></span></h1>
-    <%= @merchant.booking_widget.html_safe %>
+    <div class="jumbotron" id="jumbo">
+      <div class="inner">
+        <h2>
+         <img src="<%= @merchant.logo.html_safe %>" class="w3-image w3-round" style="width:5%;margin:auto;">  <%= @merchant.name %>
+        </h2>
+        <h4>
+          <%= @merchant.sentence %>
+        </h4>
+        <% if @merchant.about? %>
+          <h7>
+            <%= @merchant.about %>
+          </h7>
+        <% end %>
+        <br>
+        <p></p>
+        <%= @merchant.booking_widget.html_safe %>
+      </div>
   </div>
 </header>
 </body>

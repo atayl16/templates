@@ -16,7 +16,7 @@ src="https://www.w3schools.com/<!DOCTYPE html>
   <% if @merchant.vertical == "pet" %>
   <img class="w3-image" src="https://cdn.pixabay.com/photo/2020/04/09/09/24/dog-5020587_960_720.jpg" width= 100% height= 100% >
   <% else %>
-  <img class="w3-image" src="https://cdn.pixabay.com/photo/2017/03/27/13/53/action-2178873_960_720.jpg"  width= 100% height= 100%>
+  <img class="w3-image" src="https://cdn.pixabay.com/photo/2017/08/07/23/40/guy-2609240_960_720.jpg"  width= 100% height= 100%>
   <% end %>
   <div class="w3-display-middle w3-margin-top w3-small">
 
@@ -26,7 +26,11 @@ src="https://www.w3schools.com/<!DOCTYPE html>
            <img src="<%= @merchant.logo.html_safe %>" class="w3-image w3-round" style="width:5%;margin:auto;">  <%= @merchant.name %> Classes
           </h2>
           <h4>
-            Find the class that is right for you!
+            <% if @merchant.vertical == "pet" %>
+            Find the class that is right for you and your pet!
+            <% else %>
+            Discover new horizons!
+            <% end %>
           </h4>
           <br>
           <p></p>

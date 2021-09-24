@@ -11,6 +11,7 @@
         </ul>
       </div>
     <% end %>
+      <button type="submit" class="btn btn-primary btn-sm" style="float: right;">Save Merchant Profile</button>
       <%= form.text_field :name, label:  "Merchant Name*", required: true, placeholder: "Joe Smith Hair"  %>
       <%= form.select :vertical, [["Salon", "salon"], ["Business", "business"], ["Barbershop", "barbershop"], ["Spa", "spa"], ["Pet", "pet"], ["Custom - Make sure you add the custom image url at the bottom", "custom"]] %>
       <%= form.text_field :sentence, label:  "Marketing Sentence - Optional", placeholder: "Greatest shop in the city!"  %>

@@ -1,9 +1,27 @@
-<div style="background-image: url(https://cdn.pixabay.com/photo/2018/04/26/10/54/mountain-3351653_960_720.jpg); background-repeat: no-repeat; background-size: cover; background-position: center; height: 750px;">
+<style>
+.parallax {
+  /* The image used */
+  background-image: url("https://cdn.pixabay.com/photo/2018/04/26/10/54/mountain-3351653_960_720.jpg");
+
+  /* Set a specific height */
+  min-height: 850px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+
+<!-- Container element -->
+<div class="parallax">
 <%= render "navbar_internal" %>
 <div class="container">
 
 
 <h1>Merchants</h1>
+<%= link_to 'Add New Merchant', new_merchant_path, class: "btn btn-primary", style: "float: right;"  %>
 
 <p class="form-inline pull-right">
     <%= form_tag url_for(:controller => 'merchants', :action => 'index'), :method => 'get' do %>
@@ -11,6 +29,7 @@
     <%= submit_tag "Search", name: nil %>
   <% end %>
 </p>
+
 <table class="table table-light table-striped table-hover">
   <thead>
     <tr>
@@ -63,6 +82,6 @@
 
 <br>
 
-<%= link_to 'Add New Merchant', new_merchant_path, class: "btn btn-primary"  %>
 </div>
-<p></p>
+<br>
+</div>
